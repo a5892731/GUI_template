@@ -1,6 +1,3 @@
-from tkinter import *
-from PIL import Image, ImageTk
-
 from resources.gui.widgets.checkbox import checkbox
 from resources.gui.widgets.button import button
 from resources.gui.widgets.labelframe import labelframe
@@ -45,8 +42,6 @@ def side_1_label(self):
         entry(label= entry_label, text=self.string_var_type, column=1, row=0, width=12)
         entry(label= entry_label, text=self.string_var_type, column=0, row=1, width=22)
         entry(label= entry_label, text=self.string_var_type, column=1, row=1, width=22)
-
-
 
         self.image = import_image(addres='resources/gui/pictures/iss_hd_dragon4.jpg', size=int(window_width / 2))
         label_image(label=lower_label, image=self.image, column = 0, row = 1,)

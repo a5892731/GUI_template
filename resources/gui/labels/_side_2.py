@@ -1,4 +1,4 @@
-from tkinter import *
+
 
 def side_2_label(self):
 

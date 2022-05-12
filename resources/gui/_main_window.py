@@ -1,5 +1,3 @@
-from tkinter import *
-
 from resources.gui.widgets.labelframe import labelframe
 
 def build_main_window(self):

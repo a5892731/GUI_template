@@ -1,5 +1,4 @@
 from tkinter import Label
-from PIL import Image, ImageTk
 
 '''
 https://www.tutorialspoint.com/python/tk_label.htm
