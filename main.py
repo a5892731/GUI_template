@@ -6,7 +6,17 @@
 # description:
 # This is a simple template for programs with Graphic User Interface
 
-from tkinter import *
+'''
+imports
+
+-tkinter: pip install tk
+-PIL: pip install pillow
+
+'''
+
+
+
+from tkinter import Tk
 
 class ProgramRun:
     from resources.gui._gui_variables import window_variables_init, set_variable_default_values
