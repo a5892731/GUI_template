@@ -11,10 +11,11 @@ from tkinter import *
 class ProgramRun:
     from resources.gui._gui_variables import window_variables_init, set_variable_default_values
     from resources.gui._main_window import build_main_window, update_window
+    '''>>> imports used in other files connected to this class'''
     from resources.gui.labels._left_menu_label import left_menu_bar, exit_program, view_side_1, view_side_2
     from resources.gui.labels._side_1 import side_1_label
     from resources.gui.labels._side_2 import side_2_label
-
+    '''<<< imports used in other files connected to this class'''
     def __init__(self,):
         self.window = Tk()
         self.window_variables_init()
