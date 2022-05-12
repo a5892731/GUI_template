@@ -1,7 +1,7 @@
 # author: a5892731
 # date: 11.05.2022
-# last update: 11.05.2022
-# version: 1.0.0
+# last update: 12.05.2022
+# version: 1.0.1
 #
 # description:
 # This is a simple template for programs with Graphic User Interface

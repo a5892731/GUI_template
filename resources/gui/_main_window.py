@@ -1,5 +1,7 @@
 from tkinter import *
 
+from resources.gui.widgets.labelframe import labelframe
+
 def build_main_window(self):
     def draw_window_attributes():
         '''gui attributes'''
@@ -17,15 +19,14 @@ def build_main_window(self):
             self.window.columnconfigure(0, minsize=100)
             self.window.rowconfigure(0, minsize=self.window_height)
 
-            self.left_menu_label = LabelFrame(self.window, background="#cfd1cf", bd=5)
-            self.left_menu_label.grid(column=0, row=0, sticky="nesw")
+            self.left_menu_label = labelframe(label=self.window, column=0, row=0)
 
         def main_cell():
             self.window.columnconfigure(1, minsize = self.window_width - 100)
             #self.window.rowconfigure(0, minsize=self.window_height)
 
-            self.main_label = LabelFrame(self.window, background="#cfd1cf", bd=5)
-            self.main_label.grid(column=1, row=0,  sticky = "nesw")
+            self.main_label = labelframe(label=self.window, column=1, row=0)
+
         '''----------------------------------------------------------------------------------------------------------'''
         left_menu_cell()
         main_cell()
