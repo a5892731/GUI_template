@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../COM_Port_Terminal/.idea/COM_Port_Terminal.iml" filepath="$PROJECT_DIR$/../COM_Port_Terminal/.idea/COM_Port_Terminal.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/GUI_template.iml" filepath="$PROJECT_DIR$/.idea/GUI_template.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../MODBUS/.idea/MODBUS.iml" filepath="$PROJECT_DIR$/../MODBUS/.idea/MODBUS.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../state_machine/.idea/state_machine.iml" filepath="$PROJECT_DIR$/../state_machine/.idea/state_machine.iml" />
     </modules>
   </component>
 </project>
