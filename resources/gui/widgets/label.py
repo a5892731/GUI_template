@@ -1,11 +1,12 @@
-from tkinter import Label
+from tkinter import Label, LEFT, CENTER
 
 '''
 https://www.tutorialspoint.com/python/tk_label.htm
 '''
 
-def labelframe(label, column = 0, row = 0, text = "", columnspan = 1, background="#cfd1cf"):
-    label = Label(label, font=("Arial", 12), text=text, background=background)
-    label.grid(column=column, row=row, columnspan=columnspan, sticky="nesw")
+def label(label, column = 0, row = 0, text = "", columnspan = 1, background="#cfd1cf", font=("Arial", 15),
+          sticky="nesw", justify=CENTER):
+    label = Label(label, font=font, text=text, background=background, justify=justify)
+    label.grid(column=column, row=row, columnspan=columnspan, sticky=sticky)
     return label
 

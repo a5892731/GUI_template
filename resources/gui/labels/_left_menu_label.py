@@ -8,35 +8,24 @@ def left_menu_bar(self):
     menu = LabelFrame(self.left_menu_label, text="MENU", background="#cfd1cf", bd=5)
     menu.grid(column=1, row=0, sticky="nesw")
 
-    button(label=menu, text="", command="", column=0, row=0)  # row space
+    button(label=menu, text="Side 1", command=self.view_side_1_label, column=0, row=0)
 
-    button(label=menu, text="Side 1", command=self.view_side_1, column=0, row=1)
-    button(label=menu, text="Side 2", command=self.view_side_2, column=0, row=2)
-
-    button(label=menu, text="", command="", column=0, row=3)  # row space
-    button(label=menu, text="", command="", column=0, row=4)  # row space
-    button(label=menu, text="", command="", column=0, row=5)  # row space
-    button(label=menu, text="", command="", column=0, row=6)  # row space
-    button(label=menu, text="", command="", column=0, row=7)  # row space
-    button(label=menu, text="", command="", column=0, row=8)  # row space
-
-    button(label=menu, text="Exit", command=self.exit_program, column=0, row=9)
+    for i in range(1,16):
+        button(label=menu, text="", command="", column=0, row=i)  # row space
+    button(label=menu, text="Exit", command=self.exit_program, column=0, row=i+1)
 '''------------------------------------------------------------------------------------------------------------------'''
-def view_side_1(self):
+
+def view_side_1_label(self):
+    self.tab_name = "view_side_1_label"
     self.main_label.destroy()
     self.main_label = LabelFrame(self.window, background="#cfd1cf", bd=5)
     self.main_label.grid(column=1, row=0, sticky="nesw")
 
-    self.side_1_label() # resources/gui/labels/_side_1.py
-    print("Side 1")
+    self.side_1_label() # resources/gui/labels/_side_1_label.py
+    print("view_side_1_label")
 
-def view_side_2(self):
-    self.main_label.destroy()
-    self.main_label = LabelFrame(self.window, background="#cfd1cf", bd=5)
-    self.main_label.grid(column=1, row=0, sticky="nesw")
 
-    self.side_2_label()  # resources/gui/labels/_side_2.py
-    print("Side 2")
 
-def exit_program(self):
+def exit_program(self): #in future: move exit function from gui to state machine
+    self.tab_name = "Exit"
     self.window.destroy()

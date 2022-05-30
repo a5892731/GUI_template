@@ -43,8 +43,8 @@ def side_1_label(self):
         entry(label= entry_label, text=self.string_var_type, column=0, row=1, width=22)
         entry(label= entry_label, text=self.string_var_type, column=1, row=1, width=22)
 
-        self.image = import_image(addres='resources/gui/pictures/iss_hd_dragon4.jpg', size=int(window_width / 2))
-        label_image(label=lower_label, image=self.image, column = 0, row = 1,)
+        #self.image = import_image(addres='resources/gui/pictures/iss_hd_dragon4.jpg', size=int(window_width / 2))
+        #label_image(label=lower_label, image=self.image, column = 0, row = 1,)
 
 
 
@@ -76,7 +76,3 @@ def side_1_label(self):
     configure_central_label(window_width, window_height)
     configure_upper_label(window_width, )
     configure_lower_label(window_width, )
-
-
-
-
