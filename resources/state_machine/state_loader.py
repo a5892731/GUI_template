@@ -2,22 +2,9 @@
 
 https://gist.github.com/Karn/8fac5d8cc31a9a6b1e2bfb31e2a4267b
 '''
+'''import data buffer'''
+from resources.state_machine.states_data_buffer import StatesDataBuffer
 
-'''import all your states here'''
-from resources.state_machine.my_states import Initialization, CloseProgram
-
-
-
-class States():
-    def __init__(self):
-        '''information variables'''
-        self.current_state = None
-
-
-        '''init all your states here
-        this class stores memory of States'''
-        self.Initialization = Initialization()
-        self.CloseProgram = CloseProgram()
 
 class StateLoader(object): #in Karen project this is a SimpleDevice class
     """
@@ -28,7 +15,7 @@ class StateLoader(object): #in Karen project this is a SimpleDevice class
     def __init__(self):
         """ Initialize the components. """
         # Initialize all states for memory storage purposes
-        self.states_data = States()
+        self.states_data = StatesDataBuffer()
         # Select an initial state
         self.state = self.states_data.Initialization
 

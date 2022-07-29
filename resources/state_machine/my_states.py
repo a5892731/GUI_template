@@ -15,7 +15,7 @@ class Initialization(InitializationBody):
         '''import memory from States class'''
         self = states_data.Initialization
 
-        self.run_state()
+        self.run_state(states_data)
 
         '''transition conditions'''
         if self.next_state == "Initialization":

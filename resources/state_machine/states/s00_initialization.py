@@ -8,13 +8,19 @@ class InitializationBody(object):
         """
         self.lock = Lock()
         self.next_state = self.__class__.__name__
+        self.info = None
 
-    def run_state(self):
+    def run_state(self,states_data):
         #self.next_state = "CloseProgram"
 
-        self.lock = Lock()
-        print(self.info)
+        self.lock.acquire()
+        self.info = states_data.info
         self.lock.release()
+
+
+
+        print(self.info)
+
 
     def __repr__(self):
         """
