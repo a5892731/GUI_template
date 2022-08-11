@@ -19,7 +19,7 @@ class InitializationBody(object):
 
 
 
-        print(self.info)
+        #print(self.info)
 
 
     def __repr__(self):

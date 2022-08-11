@@ -5,30 +5,30 @@ def _left_menu_bar(self):
     '''--------------------------------------------------------------------------------------------------------------'''
 
     def view_side_1_label():
-        self.center_frame.destroy()
-        self.center_frame = labelframe(self.window)
-        self.center_frame.grid(column=1, row=1, sticky="nesw")
+        self.main_label.destroy()
+        self.main_label = labelframe(self.window)
+        self.main_label.grid(column=1, row=0, sticky="nesw")
         self._side_1_label() #----------------------------------------------------- ADD WINDOW NAME HERE
         print("Side 1")
 
     def view_side_2_label():
-        self.center_frame.destroy()
-        self.center_frame = labelframe(self.window)
-        self.center_frame.grid(column=1, row=1, sticky="nesw")
-        self._side_1_label() #----------------------------------------------------- ADD WINDOW NAME HERE
+        self.main_label.destroy()
+        self.main_label = labelframe(self.window)
+        self.main_label.grid(column=1, row=0, sticky="nesw")
+        self._side_2_label() #----------------------------------------------------- ADD WINDOW NAME HERE
         print("Side 2")
 
     def view_side_3_label():
-        self.center_frame.destroy()
-        self.center_frame = labelframe(self.window)
-        self.center_frame.grid(column=1, row=1, sticky="nesw")
+        self.main_label.destroy()
+        self.main_label = labelframe(self.window)
+        self.main_label.grid(column=1, row=0, sticky="nesw")
         self._side_1_label() #----------------------------------------------------- ADD WINDOW NAME HERE
         print("Side 3")
 
     def view_side_4_label():
-        self.center_frame.destroy()
-        self.center_frame = labelframe(self.window)
-        self.center_frame.grid(column=1, row=1, sticky="nesw")
+        self.main_label.destroy()
+        self.main_label = labelframe(self.window)
+        self.main_label.grid(column=1, row=0, sticky="nesw")
         self._side_1_label() #----------------------------------------------------- ADD WINDOW NAME HERE
         print("Side 4")
 
