@@ -24,7 +24,7 @@ class ProgramRun:
     from resources.gui._main_window import build_main_window, update_window
 
     '''>>> imports used in other files connected to this class'''
-    from resources.gui.windows._left_menu_label import _left_menu_bar, exit_program, view_side_1_label
+    from resources.gui.windows._left_menu_label import _left_menu_bar, exit_program
     from resources.gui.windows._side_1_label import _side_1_label
 
 
