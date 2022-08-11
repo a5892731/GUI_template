@@ -1,6 +1,6 @@
 from PIL import Image, ImageTk
 
-def import_image(addres='resources/gui/pictures/iss_hd_dragon4.jpg', size=600):
+def import_image(addres='resources/gui/pictures/pid.png', size=600):
     def re_sizer(image, max=size):
         width, height = image.size
 
