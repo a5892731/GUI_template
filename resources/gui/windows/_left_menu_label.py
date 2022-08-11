@@ -7,7 +7,7 @@ def _left_menu_bar(self):
     menu = labelframe(self.left_menu_label, text="MENU")
     menu.grid(column=1, row=0, sticky="nesw")
 
-    menu_row_size = 10
+    menu_row_size = 16
     buttons = ["page1",
                "page2",
                "page3",

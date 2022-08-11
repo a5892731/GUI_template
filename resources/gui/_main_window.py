@@ -4,7 +4,7 @@ def build_main_window(self):
     def draw_window_attributes():
         '''gui attributes'''
         self.window.title("GUI_program_name")
-        self.window.attributes('-fullscreen', True)
+        #self.window.attributes('-fullscreen', True)
         self.window.geometry("{}x{}".format(self.window_width, self.window_height))
         #icon = PhotoImage(file = "files/icon.png")
         #self.window.resizable(width=False, height=False)
