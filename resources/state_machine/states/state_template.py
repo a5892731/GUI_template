@@ -11,17 +11,21 @@ class State(object):
         We define a state object which provides some utility functions for the
         individual states within the state machine.
         """
-        self.next_state = self.__class__.__name__
-        self.lock = Lock()
+        self.next_state = self.__class__.__name__ # name of the next state
+        self.lock = Lock()  # threading Lock mechanism
+        '''
+        self.lock.acquire() # lock before read/save data
+        self.lock.release() # unlock
+        '''
 
-    def run_state(self, event):
+    def run_state(self, states_data):
         """
         Handle events that are delegated to this State.
         """
 
-        self.lock = Lock()
+        self.lock.acquire() # lock before read/save data
         pass
-        self.lock.release()
+        self.lock.release() # unlock
 
 
     def __repr__(self):
