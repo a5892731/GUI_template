@@ -1,7 +1,7 @@
 # author: a5892731
 # date: 11.05.2022
-# last update: 29.07.2022
-# version: 1.3
+# last update: 21.02.2023
+# version: 1.4
 #
 # description:
 # This is a simple template for programs with Graphic User Interface
@@ -20,7 +20,6 @@ from resources.state_machine.state_loader import StateLoader
 
 class ProgramRun:
     from resources.gui._gui_variables import window_variables_init, set_variable_default_values
-    from resources.gui._gui_variables_updater import import_variables_to_gui, export_variables_from_gui
     from resources.gui._main_window import build_main_window, update_window
 
     '''>>> imports used in other files connected to this class'''
@@ -40,6 +39,7 @@ class ProgramRun:
         self.main_loop()
 
     def main_loop(self):
+
         device = StateLoader()
 
         while True:
@@ -52,8 +52,6 @@ class ProgramRun:
                 target=device.on_event(self, 'device_locked',)
             )
             threads.append(thread)
-
-
 
 
 

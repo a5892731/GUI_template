@@ -4,8 +4,8 @@ here are the rules of state transition
 
 
 '''import all of states body classes'''
-from resources.state_machine.states.s00_initialization import InitializationBody
-from resources.state_machine.states.s01_close_program import CloseProgramBody
+from resources.state_machine.machine1.states.s000_initialization import InitializationBody
+from resources.state_machine.machine1.states.s999_close_program import CloseProgramBody
 
 
 

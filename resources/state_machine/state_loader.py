@@ -3,7 +3,7 @@
 https://gist.github.com/Karn/8fac5d8cc31a9a6b1e2bfb31e2a4267b
 '''
 '''import data buffer'''
-from resources.state_machine.states_data_buffer import StatesDataBuffer
+from resources.state_machine.machine1.states_data_buffer import StatesDataBuffer
 
 
 class StateLoader(object): #in Karen project this is a SimpleDevice class
@@ -28,15 +28,8 @@ class StateLoader(object): #in Karen project this is a SimpleDevice class
         # Save down the name of the currently called state
         self.states_data.current_state = self.state.__class__.__name__
 
-        # export variables from gui machine to state machine
-        Variables.export_variables_from_gui(self.states_data)
-
         # The next state will be the result of the on_event function.
         self.state = self.state.on_event(event=event, states_data=self.states_data)
-
-        #import variables from state machine to gui
-        Variables.import_variables_to_gui(self.states_data)
-
 
 if __name__ == "__main__":
     device = StateLoader()

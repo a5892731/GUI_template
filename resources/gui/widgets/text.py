@@ -20,9 +20,9 @@ self.stage_description_text_box.delete('1.0', END)
 
 '''
 
-def text_box(window, width = 50, height = 10, column = 0, row = 0, columnspan = 1, sticky = "w"):
+def text_box(window, width = 50, height = 10, column = 0, row = 0, columnspan = 1, sticky = "w", font=("Arial", 10)):
 
-    textbox_label = label(label=window, row=row, column=column, columnspan = columnspan, sticky = "w")
+    textbox_label = label(label=window, row=row, column=column, columnspan = columnspan, font=font, sticky = "w")
 
     sb_textbox = Scrollbar(textbox_label, width = 20)  # tworzenie kontrolki paska przewijania
     textbox = Text(textbox_label, width = width, height = height, yscrollcommand = sb_textbox.set)

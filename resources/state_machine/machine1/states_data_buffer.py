@@ -1,5 +1,5 @@
 '''import all your states here'''
-from resources.state_machine.my_states import Initialization, CloseProgram
+from resources.state_machine.machine1.my_states import Initialization, CloseProgram
 
 class StatesDataBuffer():
     def __init__(self):
