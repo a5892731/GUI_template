@@ -4,7 +4,6 @@ base for tkinter standard GUI, with three state machines for the realization of 
 ![image](https://user-images.githubusercontent.com/71212857/220584675-bd8a1255-9772-497b-90fd-ba4747ad42ea.png)
 
 
-
 State machines requirements:
 1) Create your states in my_stetes.py file;
 2) Create parent bodys for your steres in "stetes" folder dedicated to state machine;
