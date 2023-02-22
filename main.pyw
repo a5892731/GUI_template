@@ -13,9 +13,15 @@ imports
 '''
 
 from tkinter import Tk
-from threading import Thread, Lock
+from threading import Thread, BoundedSemaphore
 
-from resources.state_machine.state_loader import StateLoader
+'''init states machine'''
+from resources.state_machine.machine1.read_machine_loader import ReadUDPmachine
+from resources.state_machine.machine2.program_machine_loader import ProgramMachine
+from resources.state_machine.machine3.send_machine_loader import SendUDPmachine
+
+'''init data buffer'''
+from resources.state_machine.states_data_buffer import StatesDataBuffer
 
 
 class ProgramRun:
@@ -24,10 +30,8 @@ class ProgramRun:
 
     '''>>> imports used in other files connected to this class'''
     from resources.gui.windows._left_menu_label import _left_menu_bar, exit_program
-    from resources.gui.windows._side_1_label import _side_1_label
-    from resources.gui.windows._side_2_label import _side_2_label
-
-
+    from resources.gui.windows._home_label import _home_label
+    from resources.gui.windows._settings_label import _settings_label
 
     '''<<< imports used in other files connected to this class'''
     def __init__(self,):
@@ -36,11 +40,19 @@ class ProgramRun:
         self.set_variable_default_values()
         self.build_main_window()
 
+        self.semaphore = BoundedSemaphore(value = 2)
+
+        # Initialize all states for memory storage purposes
+        self.states_data = StatesDataBuffer()
+
         self.main_loop()
 
     def main_loop(self):
 
-        device = StateLoader()
+        read_machine = ReadUDPmachine(states_data=self.states_data, gui_data=self)
+        program_machine = ProgramMachine(states_data=self.states_data, gui_data=self)
+        send_machine = SendUDPmachine(states_data=self.states_data, gui_data=self)
+
 
         while True:
             '''create threads'''
@@ -49,10 +61,19 @@ class ProgramRun:
 
 
             thread = Thread(
-                target=device.on_event(self, 'device_locked',)
+                target=read_machine.on_event()
             )
             threads.append(thread)
 
+            thread = Thread(
+                target=program_machine.on_event()
+            )
+            threads.append(thread)
+
+            thread = Thread(
+                target=send_machine.on_event()
+            )
+            threads.append(thread)
 
 
             '''start threads'''

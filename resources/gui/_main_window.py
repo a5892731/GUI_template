@@ -32,7 +32,7 @@ def build_main_window(self):
     def draw_default_labels():
         '''draw default windows on program start'''
         self._left_menu_bar()
-        self._side_1_label()
+        self._home_label()
     '''--------------------------------------------------------------------------------------------------------------'''
     draw_window_attributes()
     main_window_grid() #  <=============================================================== create here your main window shape

@@ -1,0 +1,12 @@
+baudrate: 9600
+port: COM3
+bytesize: 8
+parity: N
+stopbits: 1
+xonxoff: False
+rtscts: False
+write_timeout: None
+dsrdtr: False
+inter_byte_timeout: None
+timeout: 0.01
+exclusive: None

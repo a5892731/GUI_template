@@ -15,9 +15,10 @@ from resources.gui.widgets.text import text_box
 from resources.gui.widgets.empty_row import empty_row
 from resources.gui.widgets.led_rectangular_indicator import led_indicator
 from resources.gui.widgets.text import text_box
+from resources.gui.widgets.slider import slider
 
 
-def _side_1_label(self):
+def _home_label(self):
     '''--------------------------------------------------------------------------------BUTTONS----------------------'''
 
     '''-------------------------------------------------------------------------DRAWING FUNCTIONS--------------------'''
@@ -35,26 +36,56 @@ def _side_1_label(self):
     '''--------------------------------------------------------------------------------------------------------------'''
     def window_upper_label(columns=3): #-----------------------------------------------------------------------------<<<<<<<<<<<
 
-        def draw_tex_bar(window, row, column, width, height):
-            drow_tex_bar_label = labelframe(window, column = column, row = row, text = "", columnspan = 1, rowspan = 1,
-                                            sticky="nesw", bd = 5, width=0)
-            text_box(drow_tex_bar_label, width=width, height=height, column=0, row=0, columnspan=1, sticky="w")
-
         '''---------------------------------------------------------------------------------------------------------'''
-        upper_label = labelframe(self.main_label, text="...", column=0, row=0, columnspan=1)
-        for row in range(columns):
-            upper_label.columnconfigure(row, minsize=self.window_width/columns)
+        upper_label = labelframe(self.main_label, text="Read UDP", column=0, row=0, columnspan=1)
 
-        draw_tex_bar(upper_label, row=0, column=0, width=37, height=10)
-        draw_tex_bar(upper_label, row=0, column=1, width=37, height=10)
-        draw_tex_bar(upper_label, row=0, column=2, width=37, height=10)
+        _label = label(upper_label, column=0, row=0, columnspan=1)
+
+        label(label=_label, column=0, row=0, text="ID [4 bytes]", rowspan=1)
+        entry(label=_label, text = "", column=0, row=1, width=16)
+
+        label(label=_label, column=1, row=0, text="DLC [1 byte]", rowspan=1)
+        entry(label=_label, text = "", column=1, row=1, width=16)
+
+        label(label=_label, column=2, row=0, text="reserved [3 bytes]", rowspan=1)
+        entry(label=_label, text="", column=2, row=1, width=16)
+
+        label(label=_label, column=3, row=0, text="data", rowspan=1)
+        entry(label=_label, text="", column=3, row=1, width=96)
+
+        empty_row(label_=upper_label, row=1)
+
+        self.read_texbox = text_box(window=upper_label, width=125, height=10, column=0, row=2)
+
 
     def window_bottom_label(columns=4): #-----------------------------------------------------------------------------<<<<<<<<<<<
 
         '''---------------------------------------------------------------------------------------------------------'''
-        bottom_label = labelframe(self.main_label, text="....", column=0, row=1, columnspan=1)
-        for row in range(columns):
-            bottom_label.columnconfigure(row, minsize=self.window_width/columns)
+        bottom_label = labelframe(self.main_label, text="Send UDP", column=0, row=1, columnspan=1)
+
+        _label = label(bottom_label, column=0, row=0, columnspan=1)
+
+        label(label=_label, column=0, row=0, text="ID [4 bytes]", rowspan=1)
+        entry(label=_label, text = "", column=0, row=1, width=16)
+
+        label(label=_label, column=1, row=0, text="DLC [1 byte]", rowspan=1)
+        entry(label=_label, text = "", column=1, row=1, width=16)
+
+        label(label=_label, column=2, row=0, text="reserved [3 bytes]", rowspan=1)
+        entry(label=_label, text="", column=2, row=1, width=16)
+
+        label(label=_label, column=3, row=0, text="data", rowspan=1)
+        entry(label=_label, text="", column=3, row=1, width=96)
+
+
+        empty_row(label_=bottom_label, row=1)
+
+        button(label=bottom_label, text="SEND", command=send_data, column=0, row=2, width=12,
+               font=("Arial", 10, "bold"))
+
+    '''--------------------------------------------------------------------------------------------------------------'''
+    def send_data():
+        print("send data button activated")
 
 
     '''-----------------------------------------------------------------------------------MAIN-----------------------'''
