@@ -5,7 +5,7 @@ base for tkinter standard GUI, with three state machines for the realization of 
 
 
 
-Stae machines requirements:
+State machines requirements:
 *Create your states in my_stetes.py file;
 *Create parent bodys for your steres in "stetes" folder dedicated to state machine;
 *in *_machine_loader.py file set "number_of_states" variable according to the number of states in current machine;
