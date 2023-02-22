@@ -32,7 +32,18 @@ class SendUDPmachine(object):
         then assigned as the new state.
         """
         # Save down the name of the currently called state
-        self.states_data.current_state = self.state.__class__.__name__
+        self.lock.acquire() # lock before read/save data
+        self.states_data.current_state_UDP = self.state.__class__.__name__
+        self.lock.release()  # unlock
 
         # The next state will be the result of the on_event function.
-        self.state = self.state.on_event(states_data=self.states_data, GUI_data = self.gui_data)
+        self.gui_data.semaphore.acquire()
+
+        number_of_states = 2
+        state_number = 0
+
+        while state_number != number_of_states:
+            state_number += 1
+            self.state = self.state.on_event(states_data=self.states_data, GUI_data = self.gui_data)
+
+        self.gui_data.semaphore.release()
