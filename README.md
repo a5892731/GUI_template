@@ -10,4 +10,13 @@ Stae machines requirements:
 *Create parent bodys for your steres in "stetes" folder dedicated to state machine;
 *in *_machine_loader.py file set "number_of_states" variable according to the number of states in current machine;
 *init all your states in "stetes_data_buffer.py" if you whant to share a data betwen states in program.
+* 
 ![image](https://user-images.githubusercontent.com/71212857/220585395-0714abd8-84ad-4e1d-9796-0198388f5fe4.png)
+
+GUI:
+*to simplyfy your program use widgets from template files;
+*create new windows inyour program and init them in main.py file;
+*edit your menu in "_left_menu_bar.py" file.
+*init all your gui variables in "_gui_variables.py" file. This variables will be accesable to get/update in your state machine.
+*
+![image](https://user-images.githubusercontent.com/71212857/220587186-d325d287-3949-441b-b3a2-c2f3b92b58ce.png)
