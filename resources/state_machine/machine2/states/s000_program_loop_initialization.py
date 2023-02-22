@@ -27,12 +27,13 @@ class ProgramInitializationBody(object):
         self.thread_loop_time_ms = 0 # if all is fine, then thread_loop_time_ms == LOOP_TIME
 
 
-    def send_data(self):
+    def send_data(self, GUI_data):
         self.lock.acquire()  # lock before read/save data
-        # GUI_data.threadTime1.set(str(self.thread_loop_time) + " [ms]")
+        GUI_data.threat2_ms.set(str(self.thread_loop_time_ms) + " [ms]")
+
         self.lock.release()  # unlock
 
-    def run_state(self,states_data):
+    def run_state(self,states_data, GUI_data):
         """
         Handle events that are delegated to this State.
         """
@@ -41,7 +42,7 @@ class ProgramInitializationBody(object):
             self.thread_loop_time_ms = round((time() - self.last_loop_time)*1000, 0)
             self.last_loop_time = time()
 
-            self.send_data() # output stage data operations
+            self.send_data(GUI_data) # output stage data operations
 
             self.next_state = "ProgramInitialization"
 

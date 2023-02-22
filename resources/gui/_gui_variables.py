@@ -10,18 +10,15 @@ def window_variables_init(self):
         self.int_var_type = IntVar()
         self.string_var_type = StringVar()
 
-    def side_1_variables():
-        self.int_var_type_1 = IntVar()
-        self.int_var_type_2 = IntVar()
-        self.int_var_type_3 = IntVar()
-        self.int_var_type_4 = IntVar()
-        self.int_var_type_5 = IntVar()
-        self.string_var_type = StringVar()
+    def program_performance_variables():
+        self.threat1_ms = StringVar()
+        self.threat2_ms = StringVar()
+        self.threat3_ms = StringVar()
+
 
     #----------------------------------------------------------------------
     gui_mechanism_variables()
-    side_1_variables()
-
+    program_performance_variables()
 
 '''------------------------------------------------------------------------------------------------------------------'''
 def set_variable_default_values(self):

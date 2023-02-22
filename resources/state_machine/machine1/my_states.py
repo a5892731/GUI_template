@@ -15,7 +15,7 @@ class ReadInitialization(ReadInitializationBody):
         '''import memory from States class'''
         self = states_data.ReadInitialization
 
-        self.run_state(states_data)
+        self.run_state(states_data, GUI_data)
 
         '''transition conditions'''
         if self.next_state == "ReadInitialization":

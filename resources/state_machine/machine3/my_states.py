@@ -15,7 +15,7 @@ class SendInitialization(SendInitializationBody):
         '''import memory from States class'''
         self = states_data.SendInitialization
 
-        self.run_state(states_data)
+        self.run_state(states_data, GUI_data)
 
         '''transition conditions'''
         if self.next_state == "SendInitialization":
